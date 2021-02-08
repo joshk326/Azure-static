@@ -2,10 +2,11 @@ trigger:
 - master
 
 parameters:
--name: helloString
-type: string
-default: Hello World
+  - name: helloString
+  type: string
+  default: Hello World
+
 stages:
--stage: printHello
--script: echo Hello World
-displayname: 'Hello World Print'
+  - printhello
+  -script echo Hello World
+  displayname: 'Hello World Print'
