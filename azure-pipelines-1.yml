@@ -3,10 +3,13 @@ trigger:
 
 parameters:
   - name: helloString
-  type: string
-  default: Hello World
+    type: string
+    default: Hello World
 
 stages:
-  - printhello
-  -script echo Hello World
-  displayname: 'Hello World Print'
+  - stage: printhello
+    jobs:
+      - job: printhelloworld
+        steps:
+          - script: echo ${{ parameters.hellostring }}
+            displayName: 'Hello World Test'
