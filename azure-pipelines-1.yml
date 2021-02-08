@@ -11,5 +11,11 @@ stages:
     jobs:
       - job: printhelloworld
         steps:
-          - script: echo ${{ parameters.hellostring }}
+          - script: 'echo ${{ parameters.hellostring }}'
             displayName: 'Hello World Test'
+  - stage: finish
+    jobs:
+      - job: printfinish
+        steps:
+          - script: 'echo "Hello World is finished printing"'
+            displayName: 'Finished'
